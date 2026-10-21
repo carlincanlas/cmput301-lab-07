@@ -19,7 +19,9 @@ import androidx.navigation.NavController
 @Composable
 fun HomeScreen(navController: NavController) {
     Column(
-        modifier = Modifier.fillMaxSize().padding(16.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -34,9 +36,20 @@ fun HomeScreen(navController: NavController) {
             onClick = {
                 navController.navigate("races")
             },
-            modifier = Modifier.testTag("raceButton") // for testing
+            modifier = Modifier.testTag("raceButton")
         ) {
             Text("Upcoming Races")
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Button(
+            onClick = {
+                navController.navigate("drivers")
+            },
+            modifier = Modifier.testTag("driversButton")
+        ) {
+            Text("Drivers")
         }
     }
 }

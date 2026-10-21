@@ -9,8 +9,20 @@ import androidx.navigation.compose.rememberNavController
 fun FormulaZeroApp() {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "home") {
-        composable("home") { HomeScreen(navController) }
-        composable("races") { UpcomingRacesScreen(navController) }
+    NavHost(
+        navController = navController,
+        startDestination = "home"
+    ) {
+        composable("home") {
+            HomeScreen(navController)
+        }
+
+        composable("races") {
+            UpcomingRacesScreen(navController)
+        }
+
+        composable("drivers") {
+            DriversScreen(navController)
+        }
     }
 }
